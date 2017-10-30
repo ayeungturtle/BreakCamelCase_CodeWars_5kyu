@@ -1,7 +1,7 @@
 def solution(string)
-    string.each_char do |i|
-        if /[[:upper:]]/ =~ i
-            puts i
+    for i in 0...string.length
+        if /[[:upper:]]/ =~ string [i]
+            puts string[i]
         end
     end
     # list will allow me to check if letter is upper /[[:upper:]]/ 
