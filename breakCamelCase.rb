@@ -1,10 +1,17 @@
 def solution(string)
-    for i in 0...string.length
+    upper_locations = []    
+    for i in 0...string.length 
         if /[[:upper:]]/ =~ string [i]
-            puts string[i]
+            upper_locations << i
+            #I tried doing i += 1 here, but it doesn't work like c#, so I decided to add the upper_locations as a workaround.
         end
     end
-    # list will allow me to check if letter is upper /[[:upper:]]/ 
+    adjust_count = 0
+    upper_locations.each do |j|
+        string.insert(j + adjust_count," ")  
+        adjust_count += 1      
+    end
+    return string
 end
 
-solution ('sgIlsgI:NKsg')
+puts (solution ('camelCaseKingIAm'))
